@@ -10,9 +10,9 @@ const Main = () => {
     <div>
       <Video />
       <Intersection />
-      <Case />
-      <Case />
-      <Case />
+      <Case caseNum={1} />
+      <Case caseNum={2} />
+      <Case caseNum={3} />
       <Community />
       <Footer />
     </div>

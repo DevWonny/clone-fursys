@@ -28,7 +28,6 @@ export default Video;
 const Wrap = styled.div`
   width: 100%;
   height: 102vh;
-  background: #2e2e2e;
   display: flex;
   align-items: center;
   justify-content: center;
