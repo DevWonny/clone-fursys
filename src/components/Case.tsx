@@ -51,11 +51,20 @@ const Case = (props: CaseNumber) => {
 
         <ExplanationContainer>
           <div>
-            새로운 시대의 뉴-워커를 위한 워크 플레이스 오-피스 제주 사계점.
-            <br />
-            자율적이고 몰입하고, 영감을 채우는 공간을 확인해 보세요.
+            {props.caseNum === 1
+              ? `새로운 시대의 뉴-워커를 위한 워크 플레이스 오-피스 제주 사계점.
+            자율적이고 몰입하고, 영감을 채우는 공간을 확인해 보세요.`
+              : props.caseNum === 2
+              ? `체인지메이커를 위한 협업과 연대의 공간, 헤이그라운드.
+다양한 생각의 화학 작용이 일어나고, 비전을 공유하며
+함께 성장하는 공간을 확인해보세요.`
+              : `도심 속 워커를 위한 휴식의 공간, 카페꼼마.
+휴식 속에서 우연처럼 마주하는 발견과
+생각이 확장되는 공간을 확인해 보세요.`}
           </div>
-          <ExplanationsButton>오-피스 제주 사례 둘러보기</ExplanationsButton>
+          <ExplanationsButton caseNum={props.caseNum}>
+            오-피스 제주 사례 둘러보기
+          </ExplanationsButton>
         </ExplanationContainer>
       </LeftContainer>
 
@@ -77,7 +86,7 @@ const Wrap = styled.div`
 const LeftContainer = styled.div`
   width: 35%;
   height: 100%;
-  background: green;
+  /* background: green; */
   position: absolute;
   top: 0;
   left: 5%;
@@ -127,12 +136,21 @@ const CollaborationLogo = styled.div`
 `;
 const ExplanationContainer = styled.div`
   width: 100%;
-  /* position: absolute; */
-  /* bottom: 0; */
-  background: red;
+  & div {
+    white-space: pre-line;
+    line-height: 1.5rem;
+    font-size: 14px;
+    font-weight: 700;
+  }
 `;
-const ExplanationsButton = styled.div`
-  border: 2px solid #000;
+const ExplanationsButton = styled.div<{ caseNum: number }>`
+  margin-top: 16px;
+  border: ${(props) =>
+    props.caseNum === 1
+      ? `2px solid #2757A4`
+      : props.caseNum === 2
+      ? `2px solid #00A75D`
+      : `2px solid #EB6D65`};
   border-radius: 40px;
   display: flex;
   align-items: center;
@@ -140,6 +158,13 @@ const ExplanationsButton = styled.div`
   width: 50%;
   padding: 0.8rem;
   font-size: 14px;
+  color: ${(props) =>
+    props.caseNum === 1
+      ? `#2757A4`
+      : props.caseNum === 2
+      ? `#00A75D`
+      : `#EB6D65`};
+  cursor: pointer;
 `;
 
 const RightContainer = styled.div`
