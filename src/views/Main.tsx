@@ -1,10 +1,20 @@
 import React from "react";
-import styled from "styled-components";
+import Video from "../components/Video";
+import Intersection from "../components/Intersection";
+import Case from "../components/Case";
+import Community from "../components/Community";
+import Footer from "../components/Footer";
 
 const Main = () => {
   return (
     <div>
-      <h1>Main Page</h1>
+      <Video />
+      <Intersection />
+      <Case />
+      <Case />
+      <Case />
+      <Community />
+      <Footer />
     </div>
   );
 };
